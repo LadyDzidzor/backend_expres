@@ -20,13 +20,13 @@ mongoose.connect(process.env.MONGODB_URI,config)
     console.error("Some problem occured", err)
 })
 
-// app.use((request, response, next) => {
-// 	console.log("This is a new request");
-// 	console.log("IP:", request.ip);
-// 	console.log("Method:", request.method);
+app.use((request, response, next) => {
+	console.log("This is a new request");
+	console.log("IP:", request.ip);
+	console.log("Method:", request.method);
 
-// 	next();
-// });
+	next();
+});
 
 
 app.use(bodyParser.json());
